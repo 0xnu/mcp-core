@@ -1,0 +1,12 @@
+core:
+  host: 127.0.0.1
+  port: 9020
+
+backends:
+  - name: filesystem
+    type: stdio
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-filesystem"
+      - .

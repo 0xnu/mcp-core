@@ -1,0 +1,36 @@
+core:
+  host: 127.0.0.1
+  port: 9020
+  readTimeout: 30s
+  writeTimeout: 60s
+  maxStreams: 20
+
+cache:
+  enabled: false
+
+logging:
+  level: info
+  format: text
+
+backends:
+  - name: go-server
+    type: stdio
+    command: go
+    args:
+      - run
+      - test/integration/fixtures/echo_server.go
+    timeout: 10s
+
+  - name: python-server
+    type: stdio
+    command: python3
+    args:
+      - test/integration/fixtures/echo_server.py
+    timeout: 10s
+
+  - name: js-server
+    type: stdio
+    command: node
+    args:
+      - test/integration/fixtures/echo_server.js
+    timeout: 10s

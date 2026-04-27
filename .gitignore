@@ -1,0 +1,9 @@
+build/
+*.tar.gz
+*.zip
+*.exe
+*.bin
+push.sh
+.DS_Store
+Makefile
+Dockerfile

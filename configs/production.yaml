@@ -1,0 +1,38 @@
+core:
+  host: 0.0.0.0
+  port: 9020
+  readTimeout: 60s
+  writeTimeout: 60s
+  maxStreams: 500
+
+auth:
+  enabled: true
+  strategy: bearer
+  tokens:
+    - "${MCP_CORE_TOKEN}"
+
+cache:
+  enabled: true
+  schemaTTL: 120s
+  responseTTL: 5s
+  maxEntrySize: 4194304
+  maxEntries: 10000
+
+logging:
+  level: info
+  format: json
+  output: stdout
+
+backends:
+  - name: filesystem
+    type: stdio
+    command: /usr/local/bin/mcp-server-filesystem
+    args:
+      - /mnt/data
+    timeout: 30s
+    maxRetries: 5
+    healthCheck:
+      enabled: true
+      interval: 10s
+      timeout: 5s
+      maxFailures: 5

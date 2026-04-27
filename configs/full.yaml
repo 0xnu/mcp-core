@@ -1,0 +1,65 @@
+core:
+  host: 127.0.0.1
+  port: 9020
+  readTimeout: 30s
+  writeTimeout: 30s
+  maxStreams: 100
+
+auth:
+  enabled: false
+  strategy: bearer
+  tokens: []
+
+cache:
+  enabled: true
+  schemaTTL: 60s
+  responseTTL: 1s
+  maxEntrySize: 1048576
+  maxEntries: 1000
+
+logging:
+  level: info
+  format: json
+  output: stdout
+
+backends:
+  - name: filesystem
+    type: stdio
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-filesystem"
+      - .
+    timeout: 30s
+    maxRetries: 3
+    healthCheck:
+      enabled: true
+      interval: 5s
+      timeout: 2s
+      maxFailures: 3
+
+  - name: github
+    type: stdio
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-github"
+    env:
+      GITHUB_TOKEN: "${GITHUB_TOKEN}"
+    timeout: 30s
+    maxRetries: 3
+    healthCheck:
+      enabled: true
+      interval: 5s
+      timeout: 2s
+      maxFailures: 3
+
+  - name: postgres
+    type: stdio
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-postgres"
+      - postgresql://localhost:5432/mydb
+    timeout: 15s
+    maxRetries: 2

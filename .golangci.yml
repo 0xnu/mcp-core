@@ -1,0 +1,65 @@
+version: "2"
+linters:
+  default: all
+  disable:
+    - containedctx
+    - cyclop
+    - depguard
+    - dupl
+    - err113
+    - exhaustruct
+    - forcetypeassert
+    - funlen
+    - funcorder
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - gocyclo
+    - godox
+    - inamedparam
+    - lll
+    - mnd
+    - nlreturn
+    - noinlineerr
+    - paralleltest
+    - tagliatelle
+    - testpackage
+    - varnamelen
+    - wrapcheck
+    - wsl_v5
+    - wsl
+  settings:
+    forbidigo:
+      forbid:
+        - pattern: ^errors\.Wrap$
+        - pattern: ^errors\.Wrapf$
+    gocritic:
+      disabled-checks:
+        - commentFormatting
+    revive:
+      rules:
+        - name: exported
+          disabled: true
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$

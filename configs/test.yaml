@@ -1,0 +1,22 @@
+core:
+  host: 127.0.0.1
+  port: 9020
+  readTimeout: 30s
+  writeTimeout: 60s
+  maxStreams: 10
+
+cache:
+  enabled: false
+
+logging:
+  level: debug
+  format: text
+  output: stdout
+
+backends:
+  - name: echo-server
+    type: stdio
+    command: python3
+    args:
+      - test/integration/fixtures/echo_server.py
+    timeout: 10s
