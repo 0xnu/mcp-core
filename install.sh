@@ -31,12 +31,14 @@ case "$OS" in
         ;;
 esac
 
+ARCHIVE_VERSION="${VERSION#v}"
+
 echo "Downloading mcp-core $VERSION for $OS/$ARCH..."
 
 TMPDIR=$(mktemp -d)
 trap 'rm -rf "$TMPDIR"' EXIT
 
-URL="https://github.com/$REPO/releases/download/$VERSION/mcp-core-${VERSION}-${OS}-${ARCH}.tar.gz"
+URL="https://github.com/$REPO/releases/download/$VERSION/mcp-core-${ARCHIVE_VERSION}-${OS}-${ARCH}.tar.gz"
 
 curl -fsSL "$URL" | tar -xz -C "$TMPDIR"
 

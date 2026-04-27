@@ -13,7 +13,8 @@ if ($Version -eq "latest") {
 }
 
 $Arch = if ([Environment]::ProcessorArchitecture -eq 'Arm64') { "arm64" } else { "amd64" }
-$ZipName = "mcp-core-${Version}-windows-${Arch}.zip"
+$ArchiveVersion = $Version.TrimStart('v')
+$ZipName = "mcp-core-${ArchiveVersion}-windows-${Arch}.zip"
 $DownloadUrl = "https://github.com/$Repo/releases/download/$Version/$ZipName"
 
 Write-Host "Downloading mcp-core $Version for windows/$Arch..." -ForegroundColor Green
