@@ -41,9 +41,8 @@ trap 'rm -rf "$TMPDIR"' EXIT
 URL="https://github.com/$REPO/releases/download/$VERSION/mcp-core-${ARCHIVE_VERSION}-${OS}-${ARCH}.tar.gz"
 
 curl -fsSL "$URL" | tar -xz -C "$TMPDIR"
-
-install -m 755 "$TMPDIR/mcp-core-${OS}-${ARCH}" "$BINDIR/mcp-core"
-install -m 755 "$TMPDIR/corectl-${OS}-${ARCH}" "$BINDIR/corectl"
+sudo install -m 755 "$TMPDIR/mcp-core-${OS}-${ARCH}" "$BINDIR/mcp-core"
+sudo install -m 755 "$TMPDIR/corectl-${OS}-${ARCH}" "$BINDIR/corectl"
 
 echo "Installed mcp-core and corectl to $BINDIR"
 echo "Run 'mcp-core' to start the daemon"
