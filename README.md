@@ -82,7 +82,7 @@ go install github.com/0xnu/mcp-core/cmd/corectl@latest
 
 ### Client Setup
 
-See [Client Guide](./docs/client-guide.md) for connecting:
+See [Client Guide](./docs/client_guide.md) for connecting:
 
 - **VS Code**: `.vscode/mcp.json` with SSE
 - **Cursor**: `.cursor/mcp.json` with SSE
@@ -145,7 +145,7 @@ corectl version    # Show version
 
 ### Configuration
 
-See [configs/minimal.yaml](./configs/minimal.yaml), [configs/full.yaml](./configs/full.yaml), [configs/production.yaml](./configs/production.yaml), and [configs/language-test.yaml](./configs/language-test.yaml).
+See [minimal](./configs/minimal.yaml), [full](./configs/full.yaml), [production](./configs/production.yaml), and [language-test](./configs/language-test.yaml).
 
 ### Documentation
 
