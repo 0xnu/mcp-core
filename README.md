@@ -150,7 +150,7 @@ See [minimal](./configs/minimal.yaml), [full](./configs/full.yaml), [production]
 ### Documentation
 
 - [Architecture](./docs/architecture.md): Component design and data flow
-- [Client Guide](./docs/client-guide.md): VS Code, Cursor, Zed, Claude Desktop setup
+- [Client Guide](./docs/client_guide.md): VS Code, Cursor, Zed, Claude Desktop setup
 - [Protocol](./docs/protocol.md): SSE transport, JSON-RPC methods, error codes
 - [Deployment](./docs/deployment.md): Binary install, Docker, production tips
 - [Comparison](./docs/comparison.md): vs individual servers vs agent frameworks
