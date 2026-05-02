@@ -4,6 +4,7 @@ build/
 *.exe
 *.bin
 push.sh
+depth.sh
 .DS_Store
 Makefile
 Dockerfile

@@ -5,6 +5,7 @@
 [![Release](https://img.shields.io/github/release/0xnu/mcp-core.svg)](https://github.com/0xnu/mcp-core/releases/latest)
 [![Go Report Card](https://goreportcard.com/badge/github.com/0xnu/mcp-core)](https://goreportcard.com/report/github.com/0xnu/mcp-core)
 [![Go Reference](https://pkg.go.dev/badge/github.com/0xnu/mcp-core.svg)](https://pkg.go.dev/github.com/0xnu/mcp-core)
+[![Docker](https://img.shields.io/docker/pulls/0xnu20/mcp-core?label=Docker%20Pulls)](https://hub.docker.com/r/0xnu20/mcp-core)
 [![License](https://img.shields.io/github/license/0xnu/mcp-core)](/LICENSE)
 
 mcp-core is a high-performance consolidation gateway for the Model Context Protocol (MCP) ecosystem. Written in Go and distributed as a single statically-linked binary, it replaces the growing sprawl of individual MCP server processes with a unified, observable, and self-healing proxy layer.
@@ -65,6 +66,14 @@ powershell -c "irm https://raw.githubusercontent.com/0xnu/mcp-core/main/install.
 ```bash
 go install github.com/0xnu/mcp-core/cmd/mcp-core@latest
 go install github.com/0xnu/mcp-core/cmd/corectl@latest
+```
+
+**Docker:**
+```bash
+docker pull 0xnu20/mcp-core
+docker run -p 9020:9020 \
+  -v $(pwd)/mcp-core.yaml:/etc/mcp-core/mcp-core.yaml \
+  0xnu20/mcp-core:latest
 ```
 
 #### 2. Run
