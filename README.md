@@ -139,7 +139,7 @@ corectl version    # Show version
 
 ### Features
 
-- **Single binary**: No npm, pip, or Docker required. One statically-linked Go binary (~12MB).
+- **Single binary**: No npm or pip required. One statically-linked Go binary (~12MB).
 - **Process consolidation**: Replace 5+ MCP server processes with one hub.
 - **Language-agnostic**: Backends in Go, Python, JavaScript, TypeScript, or any language with stdio.
 - **Framework-agnostic**: Works with Claude Desktop, Cursor, VS Code, Zed, any MCP client.
