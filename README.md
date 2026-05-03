@@ -168,6 +168,20 @@ See [minimal](./configs/minimal.yaml), [full](./configs/full.yaml), [production]
 
 This project is licensed under the [MIT License](./LICENSE).
 
+### Citation
+
+```tex
+@misc{mcpcoreafo2026,
+  author       = {Oketunji, A.F.},
+  title        = {mcp-core},
+  year         = 2026,
+  version      = {1.0.1},
+  publisher    = {Finbarrs Oketunji},
+  doi          = {10.5281/zenodo.19995643},
+  url          = {https://doi.org/10.5281/zenodo.19995643}
+}
+```
+
 ### Copyright
 
 (c) 2026 [Finbarrs Oketunji](https://finbarrs.eu).
